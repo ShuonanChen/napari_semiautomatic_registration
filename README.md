@@ -12,7 +12,11 @@ We assume all data is processed in the shape of `(C,Z,X,Y)` where `C` is the num
 1. Exvivo stitching 
     1. napari to find the transformation 
     2. load the result and stitch everything together. 
-2. Exvivo - Invivo GUI: load the GUI and estimate the transformation. Note that the moving image is Invivo and the target image is Exvivo. 
-3. FOV motion correction 
-4. FOV - Invivo registration: no GUI needed, automatical registration based on the phase correlation and polar transformation 
-5. FOV - Exvivo: based on the previous results fine tune the FOV 
+2. Invivo - Exvivo GUI:
+    1. `invivo_to_exvivo.ipynb`
+    2. load the GUI and estimate the transformation. Note that the moving image is Invivo and the target image is Exvivo.
+4. FOV motion correction
+    1. `run_motion_correction.ipynb`
+6. FOV - Invivo registration: no GUI needed, automatical registration based on the phase correlation and polar transformation
+    1. foo
+8. FOV - Exvivo: based on the previous results fine tune the FOV 
