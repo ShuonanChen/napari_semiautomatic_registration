@@ -10,8 +10,8 @@ We assume all data is processed in the shape of `(C,Z,X,Y)` where `C` is the num
 **What does this repo do?**
 
 1. Exvivo stitching 
-    1. napari to find the transformation 
-    2. load the result and stitch everything together. 
+    1. napari to find the transformation `exvivo_stitching_notebook.ipynb`
+    2. load the result and stitch everything together. `stitch_results.ipynb`
 2. Invivo - Exvivo GUI:
     1. `invivo_to_exvivo.ipynb`
     2. load the GUI and estimate the transformation. Note that the moving image is Invivo and the target image is Exvivo.
