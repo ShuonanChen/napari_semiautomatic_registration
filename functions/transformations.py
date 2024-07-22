@@ -1,6 +1,16 @@
 import numpy as np
 
 
+
+
+'''
+trans and inv_trans have the same usage. 
+
+E.g., 
+
+
+'''
+
 def trans(source,T_dict,o_shape):  # original when source image is of size (c,z,x,y)
     assert(len(source.shape)==4)  # this is (c,z,x,y) where c==2 for now. z can be 8,16,24....
     C = source.shape[0]
@@ -19,6 +29,7 @@ def trans(source,T_dict,o_shape):  # original when source image is of size (c,z,
     return(transformed_all)
 
 
+
 def inv_trans(source,T_dict,o_shape):  # original when source image is of size (c,z,x,y)
     assert(len(source.shape)==4)  # this is (c,z,x,y) where c==2 for now. z can be 8,16,24....
     C = source.shape[0]
@@ -28,13 +39,15 @@ def inv_trans(source,T_dict,o_shape):  # original when source image is of size (
             if k=='bhat':
                 B = B@((np.c_[v, np.array((0,0,0,1))]))
             if k=='scale':
-                B[:,:3] *= v  
-    R_3 = np.linalg.inv(B[:3,:3])
-    offset_3 = -B[-1,:-1]
+                B[:3,:3] *= v  
+    R_3 = (B[:3,:3]).T
+    offset_3 = B[-1,:-1]
     print('running rigid..')
     transformed_all = np.array([ndi.affine_transform(source[c].astype('float32'), R_3, offset = offset_3,
                                     output_shape = o_shape, order=1) for c in range(C)])
     return(transformed_all)
+
+
 
 
 
