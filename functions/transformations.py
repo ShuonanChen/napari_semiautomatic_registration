@@ -7,7 +7,16 @@ import numpy as np
 trans and inv_trans have the same usage. 
 
 E.g., 
+invivo_tomato_t = trans(invivo_tomato[None], T_in_ex, o_shape=fov_t.shape)
+invivo_tomato_t_t = inv_trans(invivo_tomato_t,T_in_ex,o_shape=fov_t.shape)
 
+
+the logic here is (due to scipy ndimage convention): 
+    R = bhat[:2,:2]
+    d = -(bhat[:2,:2])@bhat[-1]
+    Y = ndi.affine_transform(X,R,d)
+    X_p = ndi.affine_transform(Y,R.T, bhat[-1])
+then X and X_p are exact matches. 
 
 '''
 
