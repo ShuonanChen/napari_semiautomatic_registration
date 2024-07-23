@@ -18,15 +18,14 @@ We assume all data is processed in the shape of `(C,Z,X,Y)` where `C` is the num
 2. Invivo - Exvivo GUI:
     1. `invivo_to_exvivo.ipynb`
     2. load the GUI and estimate the transformation. Note that the moving image is Invivo and the target image is Exvivo.
-3. FOV motion correction
-    1. `run_motion_correction.ipynb`
-    2. used [decentralized registration](https://ieeexplore.ieee.org/abstract/document/9414145)
-4. FOV - Invivo registration: no GUI needed, automatical registration based on the phase correlation and polar transformation
+3. FOV - Invivo registration: no GUI needed, automatical registration based on the phase correlation and polar transformation
     1. `FOV_to_invivo.ipynb`
     2. this first map FOV to invivo, and then map these transformed FOV to Exvivo (by using the transformation learned in `invivo_to_exvivo.ipynb`)
-5. FOV - Exvivo: based on the previous results fine tune the FOV
+4. FOV - Exvivo: based on the previous results fine tune the FOV
     1. `refine_FOV_to_exvivo.ipynb`
     2. load the output from above and refine the map from FOV to Exvivo, and save the cell locations in both images.
-3. FOV invert transformation 
+5. FOV invert transformation 
     1. `FOV_invert_transformation.ipynb`
     2. final script to apply inverse transformation to the locations found on FOV to map back to the original space. 
+
+
