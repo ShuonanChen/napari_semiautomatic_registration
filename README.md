@@ -8,7 +8,9 @@ We assume all data is processed in the shape of `(C,Z,X,Y)` where `C` is the num
 
 
 **What does this repo do?**
-
+0. Preprocessing
+    1. rescaling the image with the given image resolution 
+    2. mainly right now we downsample both exvivo and invivo data
 1. Exvivo stitching 
     1. napari to find the transformation `exvivo_stitching_notebook.ipynb`
     2. load the result and stitch everything together. `stitch_results.ipynb`
