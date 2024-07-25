@@ -9,7 +9,7 @@ Assume we have Invivo zstack image, Invivo time-averaged FOVs, and Exvivo images
 We assume all data is processed in the shape of `(C,Z,X,Y)` where `C` is the number of color channel and `Z` is the imaging depth. If there is only one color channel, it should be of size `(1,100,1024,1024)`, for example. If the image is 2D, then it should be `(2,1,2048,2048)`, for example. 
 
 
-<img src="figs/pipeline.png" alt="foo" width="600"/>
+<img src="pipeline.png" alt="foo" width="600"/>
 
 **What does this repo do?**
 
